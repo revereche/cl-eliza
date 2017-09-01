@@ -1,0 +1,7 @@
+
+(defun simple-equal (x y)
+  "Are x and y equal? (Don't check inside strings.)"
+  (if (or (atom x) (atom y))
+      (eql x y)
+      (and (simple-equal (first x) (first y))
+	   (simple-equal (rest x) (rest y)))))
